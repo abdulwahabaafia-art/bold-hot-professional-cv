@@ -350,20 +350,28 @@ a:focus-visible { outline: 2px solid var(--volt); outline-offset: 6px; }
 @media (prefers-reduced-motion: reduce) { .dark-particles { display: none; } *, *::before, *::after { animation: none !important; transition: none !important; } }
 
 
-/* A hot-stamped SAW monogram badge beside the portrait — no text card, no fireworks. */
-.saw-badge { position: absolute; z-index: 3; right: 3.5vw; top: 3.5rem; display: flex; flex-direction: column; align-items: center; gap: 1.1rem; pointer-events: none; animation: content-arrive 1s .7s ease-out both; }
-.saw-badge-core { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 7rem; height: 7rem; background: var(--volt); color: var(--ink); box-shadow: 0 0 0 2px var(--ink), 0 0 42px oklch(.94 .2 106 / 45%), 0 18px 40px oklch(0 0 0 / 60%); }
-.saw-badge-core span { font: 400 2.9rem/.78 var(--font-display); line-height: .78; letter-spacing: .02em; }
-.saw-badge-ring { position: absolute; top: -1.35rem; width: 9.7rem; height: 9.7rem; border: 1px solid oklch(.94 .2 106 / 35%); border-radius: 50%; animation: badge-pulse 3.2s ease-in-out infinite; }
-@keyframes badge-pulse { 0%, 100% { transform: scale(1); opacity: .85; } 50% { transform: scale(1.09); opacity: .35; } }
-.saw-badge-caption { padding: .5rem .8rem; background: var(--ink); border: 1px solid oklch(.94 .2 106 / 55%); color: var(--volt); font-size: .58rem; font-weight: 800; letter-spacing: .28em; text-transform: uppercase; }
+/* A hot-stamped SAW monogram emblem that owns the hero corner — no text card, no fireworks. */
+.saw-badge { position: absolute; z-index: 3; right: 2.5vw; top: 2.5rem; display: flex; flex-direction: column; align-items: center; gap: 0; pointer-events: none; animation: content-arrive 1s .7s ease-out both; }
+.saw-badge-core { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 11rem; height: 11rem; background: var(--volt); color: var(--ink); box-shadow: 0 0 0 4px var(--ink), 0 0 0 6px oklch(.94 .2 106 / 30%), 0 0 70px oklch(.94 .2 106 / 55%), 0 0 160px oklch(.72 .19 55 / 35%), 0 26px 60px oklch(0 0 0 / 70%); }
+.saw-badge-core::before { content: ""; position: absolute; inset: .55rem; border: 2px solid var(--ink); pointer-events: none; }
+.saw-badge-core::after { content: "EST. MMXXVI"; position: absolute; bottom: .9rem; font-size: .42rem; font-weight: 900; letter-spacing: .3em; color: oklch(0 0 0 / 55%); }
+.saw-badge-core span { font: 400 4.6rem/.78 var(--font-display); line-height: .78; letter-spacing: .02em; text-shadow: 3px 3px 0 oklch(.72 .19 55 / 45%); }
+.saw-badge-ring { position: absolute; z-index: 1; top: -2.1rem; left: 50%; translate: -50% 0; width: 15.2rem; height: 15.2rem; border: 1px solid oklch(.94 .2 106 / 40%); border-radius: 50%; animation: badge-pulse 3.2s ease-in-out infinite; }
+.saw-badge-ring::before { content: ""; position: absolute; inset: -1.1rem; border: 2px dashed oklch(.94 .2 106 / 30%); border-radius: 50%; animation: badge-spin 26s linear infinite; }
+.saw-badge-ring::after { content: ""; position: absolute; inset: 0; border-radius: 50%; box-shadow: 0 0 60px oklch(.94 .2 106 / 25%), inset 0 0 60px oklch(.94 .2 106 / 12%); }
+@keyframes badge-pulse { 0%, 100% { transform: scale(1); opacity: .9; } 50% { transform: scale(1.06); opacity: .45; } }
+@keyframes badge-spin { to { transform: rotate(360deg); } }
+.saw-badge-caption { position: relative; z-index: 3; margin-top: -1.05rem; padding: .65rem 1.6rem; background: var(--ink); border: 2px solid var(--volt); color: var(--volt); font-size: .68rem; font-weight: 900; letter-spacing: .34em; text-transform: uppercase; box-shadow: 0 0 34px oklch(.94 .2 106 / 35%), 0 14px 30px oklch(0 0 0 / 65%); }
 .saw-badge-caption::before { content: "— "; color: oklch(.94 .2 106 / 55%); }
+.saw-badge-caption::after { content: " —"; color: oklch(.94 .2 106 / 55%); }
 @media (max-width: 700px) {
-  .saw-badge { top: 2rem; left: 1rem; right: auto; align-items: flex-start; gap: .55rem; }
-  .saw-badge-caption { margin-left: -.5rem; }
-  .saw-badge-core { width: 4.2rem; height: 4.2rem; }
-  .saw-badge-core span { font-size: 1.7rem; }
-  .saw-badge-ring { left: -.85rem; top: -.85rem; width: 5.9rem; height: 5.9rem; }
-  .saw-badge-caption { padding: .35rem .5rem; font-size: .45rem; letter-spacing: .2em; }
+  .saw-badge { top: 1.6rem; left: 1rem; right: auto; align-items: flex-start; }
+  .saw-badge-core { width: 5.6rem; height: 5.6rem; box-shadow: 0 0 0 3px var(--ink), 0 0 40px oklch(.94 .2 106 / 45%), 0 14px 30px oklch(0 0 0 / 65%); }
+  .saw-badge-core::before { inset: .35rem; border-width: 1px; }
+  .saw-badge-core::after { content: none; }
+  .saw-badge-core span { font-size: 2.3rem; text-shadow: 2px 2px 0 oklch(.72 .19 55 / 45%); }
+  .saw-badge-ring { left: 2.8rem; top: -1.05rem; width: 7.7rem; height: 7.7rem; }
+  .saw-badge-ring::before { inset: -.6rem; border-width: 1px; }
+  .saw-badge-caption { margin-top: -.7rem; margin-left: -.4rem; padding: .4rem .7rem; font-size: .5rem; letter-spacing: .22em; border-width: 1px; }
 }
-@media (prefers-reduced-motion: reduce) { .saw-badge-ring { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .saw-badge-ring, .saw-badge-ring::before { animation: none; } }
