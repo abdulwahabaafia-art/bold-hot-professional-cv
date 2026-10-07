@@ -56,6 +56,7 @@ function Portfolio() {
         <div className="dark-particles" aria-hidden="true">{Array.from({ length: 28 }, (_, index) => <i key={index} />)}</div>
         <div className="shadow-shards" aria-hidden="true"><i /><i /><i /><i /></div>
         <img className="hero-image" src={portrait} alt="Syed Abdul Wahab in a sharply lit editorial portrait" width={1145} height={768} fetchPriority="high" />
+        <div className="topbar" aria-hidden="true" />
         <div className="portrait-signature" aria-hidden="true"><MoveUpRight /><strong>Bold by<br />design.</strong><span>SAW / Creative practice</span></div>
         <div className="hero-copy">
           <h1><span>Syed</span><span className="hot-line">Abdul</span><span>Wahab<b>.</b></span></h1>

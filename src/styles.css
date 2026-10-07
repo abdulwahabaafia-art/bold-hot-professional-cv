@@ -355,4 +355,4 @@ a:focus-visible { outline: 2px solid var(--volt); outline-offset: 6px; }
 .portrait-signature svg { width: 46px; height: 46px; color: var(--volt); stroke-width: 1.5; }
 .portrait-signature strong { font: 400 3rem/.85 var(--font-display); text-transform: uppercase; text-align: right; color: transparent; -webkit-text-stroke: 1px var(--portrait-mark); }
 .portrait-signature span { color: var(--muted-foreground); font-size: .6rem; font-weight: 700; text-transform: uppercase; border-top: 1px solid var(--border); padding-top: .6rem; }
-@media (max-width: 700px) { .portrait-signature { top: 2.2rem; right: 1rem; gap: .4rem; } .portrait-signature strong { font-size: 1.65rem; } .portrait-signature svg { width: 27px; height: 27px; } .portrait-signature span { font-size: .5rem; } }
+@media (max-width: 700px) { .portrait-signature { top: 2.2rem; left: 1rem; right: auto; align-items: flex-start; gap: .4rem; } .portrait-signature strong { font-size: 1.65rem; text-align: left; } .portrait-signature svg { width: 27px; height: 27px; } .portrait-signature span { font-size: .5rem; } }
