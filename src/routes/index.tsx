@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowDown, ArrowUpRight, FileText, Linkedin, MoveUpRight } from "lucide-react";
+import { ArrowDown, ArrowUpRight, FileText, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CvDownload } from "@/components/cv-download";
 import portraitAsset from "@/assets/wahab-bold-editorial.jpg.asset.json";
@@ -57,7 +57,11 @@ function Portfolio() {
         <div className="shadow-shards" aria-hidden="true"><i /><i /><i /><i /></div>
         <img className="hero-image" src={portrait} alt="Syed Abdul Wahab in a sharply lit editorial portrait" width={1145} height={768} fetchPriority="high" />
         <div className="topbar" aria-hidden="true" />
-        <div className="portrait-signature" aria-hidden="true"><MoveUpRight /><strong>Bold by<br />design.</strong><span>SAW / Creative practice</span></div>
+        <div className="saw-badge" aria-hidden="true">
+          <div className="saw-badge-ring" />
+          <div className="saw-badge-core"><span>SA</span><span>W.</span></div>
+          <span className="saw-badge-caption">Creative practice</span>
+        </div>
         <div className="hero-copy">
           <h1><span>Syed</span><span className="hot-line">Abdul</span><span>Wahab<b>.</b></span></h1>
           <div className="hero-intro"><p>Thoughtful design.<br />Dependable development.</p><Button asChild variant="portfolio"><a href="#work">See the work <ArrowUpRight /></a></Button></div>
